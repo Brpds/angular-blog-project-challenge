@@ -1,14 +1,34 @@
-export const dataFake = [
+export interface postData {
+  postTitle: string;
+  postCover: string;
+  postId: string;
+  postDescription: string;
+}
+
+export let dataFake:postData[] = [
   {
-    "id":"1",
-    "title": "NOVO HOMEM DE FERRO EM 3D",
-    "description": "marvel anuncia um novo filme do homem de ferro, confira",
-    "photoCover":"https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7F51FA9F6CBD9F0C9B1394B1CC0A6A842D07091318674E234CD33CBF7C28CDC3/scale?width=1200&aspectRatio=1.78&format=jpeg"
+    "postId":"0",
+    "postTitle":"This is the headline",
+    "postDescription":"this is lorem ipsum sit dolor amet",
+    "postCover":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLy46Fx8zODMsNygtLisBCgoKDg0NFQ8PFSsdFR0tLS0tLSsrKystLS0rLS03LS4tKysvKysrKy0rLSstKys3LSsrLS0tLSstKysrKy0tK//AABEIALcBEwMBEQACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAAAQIDBAUHBv/EADAQAQACAgAEBAMHBQEAAAAAAAABAgMRBAUSITFBUWEGcZETIjKBobHwQlJi0eEj/8QAGwEBAQEBAAMBAAAAAAAAAAAAAAECAwQFBgf/xAA1EQEAAgIBAgMDCgUFAAAAAAAAAQIDEQQhMQUSQVFxkQYTIkJhgaGx0fAjMmLB4RUWQ1Oi/9oADAMBAAIRAxEAPwD8++sfFKoQCqggAAoAAgACgAAAAAAgAoCAAkoqAIqAgqSCCogbFQViK6YbcSAUAAQAABQAURAUAAAEFAAAAQAAElFSRUABBUBJFSUVARFQHS25AKIAAAoAAKAIAAAAAAgAoCAAAIIqoCIpIMRSRUBBURUBEV0tuJAAKIAoAAAAAigAAAAAgAoACAAAIMZFQVJFAQVASRURUkEFdDTioAKAIoAAAgKACAKAAACAACgIAACCoAioCCoCSKkioCSioaHQ05gigogCgAAAACKACAoAAIAKAAAgAIKgAqAgqIArGQQaSQNIN7bmsIigCAAAKAAACiAAAAAIAAAKAgAJIqAgoCCoAKkoMZFSRUB0q5KAIAAoAAACgiKAAAAACA6eE4DPnnWLFe/vEdvq9fyvFOJxZ1lyRFvZHWfhG5eXg4OfNG6U6e3tHxl7PDfBfG3/ABRTH6dVtz+j1mT5R496x4bW9+q/nO3sKeDX+vkiPduf0brfA3FR4ZMc/Vw/3NMd+Nb7rVdP9Fj/ALo+EvO4z4Z43DuZx9UR50nfZ5GH5TcK8+XJ5sc/1R0+Mbh4+TwbkV601b3T1+E6eRes1mYmJiY8YmNTD3+PJTJWL0mJrPrHV6u1LUma2jUwjbIKgIKgIKgoCSCSioKgOlXIEAAUAAARQAAAAAOmfQNwdMhuCtZmYrETMzMREesy55MlcdJvedVjrMt0pN7RWsbmX7Hkvwtjx1jNxs/5Vxbjv7e74fxLx/Jn3GK048Ht+tb3eyPxfUcLwmmPXnjz5P8AzH6/k9XJzfojowUrhrHpEb+r5S3Lt/xx5ft7zPvmX0uPhV73nf5Oa/Ms1vHJf66/Zxvny262vLyK8bFXtWG3HzLNXX35nXr3/cryc1e15YtxcVu9XZwnOJmYjLETWZ1vURMe/u8nFz7TPly9ay8fLwa63j6TDg+MeRUyY5zY41kpEz2/q1/T+73fh3iE+G8ylN/wMk6mPZPtj+/2PR83iRysMzr+JWOk+37P0+188iX6S+QXYIAKgIKSCCoAgxFBXRCuICgACAKAAACqIgtKbEmdOiMWvIcpvv1ZTX21rxVN/amkNtd6JLcWdmDm+aOmMl75K1jUdcza1Y9ImXzXi/yfw8qJyYo8uT8J98enve/8M8ayca0VyfSx/jHu/R6eLiovEWidx5vz7NxsmG80yV1aH3WHkUy0i1J3We0uzFG+/rrX5vFt06OvmbemfbxY215m2naY/mv9Myzbq/RZJ6+F6p77pEzM6/N7jl+bJwq27z0emrEVzzD45No3OvDc6+W361j35I330+EvEeadLEujC7BAAQUBABUBEVAdKuQIAoAAAAKCASCQDppWPXX7q5TLK15iJiJnv6x5okVje5hjj35zvw9omfXQttejZFZGNranb3QiXPkqkutZbeVXmuakb1W161t232mdTMR6vn/GvD658fzkRq9fX7PWP0e58K8Qtx8nzcz9C34T6T+r6FxtcPTMzqMk0iMfn92Nf0x2/kvhObOHVomPpa6fv0fXceck69nq8yJ9/wA529O9nDbw2G17RSvjadN48c5LxSveUyZIpWbT2h1fGXM68FwX2NJ/9MlfsqesRrvb+er7Pg8OORnx4I646am33do++fw2+Z5nJnHjtk+tbpH3+v3PlUXfdxL5eYbK2aZmGW1Z0uwFFEQUBABWIqIOpXEAAABREFURBRRjaUWIZYe/dYS7rxV2S4WnTbGCfWEY+cX7LSJ5tpEBtbShDlyf9/RHarVWdWjXjuHi8qYjFeZ9In8nlces2y0rHrMfm/UcLebRuZmZnv37/N+PZO79QisRLvwYrWmIiJtvtqI3LlETafLWOpNorHXo9Tic+DluCc2WYnJMarWPGZ/trD3fA4d73riwdc1vX0rHrM/vr2en5nLiKzbJ0pHxmXzHnPM8nF5bZss957Vr5Ur6Q/R+BwcfCwxjp1nvMz3mfWf0j0fJcjkWz5PNb7o9kPLrZ5cSxMN1Zac5hnFmk0ziVZmGUDLIQUBUBBUkERXSriogAAAAKAxUSZRWu8jcN3D/AIYWHO/d14rEuFobq5PPz/VHOarF43O97+onl9iZMke2/wC3cb8PNFrWXNkzdv8AUjtWjTNu7Mumnbyzgb5rR01tbU/hrWZmff28vrD5j5Rc+2HH8xSPpXj4R/l7/wAC4dcmSc951Wk9Ptn/AB3fteXciyREWy6x0jx3MdX/AB8HPGt/Nlny1fWX5UdqdZauZ/EfB8BW1OH1lz+E6nep/wAreUez3fh3hPI5Ex8zSceKe97d5j+mPX8nqeZ4hSkfTt5relY/v+9vn3NOaZuKv9pnyTee+o8K1j0iPJ93w/D+Pw6eXDXW+895n3z+4fN5uRkz23ed/lDy8uTfaHlTLNa66lIIJlthphnCsyzhWZZwrMsoEVUAAQVBU0g6VcQAAAAABRJFa7I1DCytQ3cPP3fl2IYvHVviRy0TYNJ1fydSLpjfNOvHt8pj9kWKQ1bG9NeTLFYm0z2hmZiG60m06h73LvjGnC4K4+H4f7+vvXvMRufXtvb463yd5PI5GTNn5ER5p+rG5iPSNz2h9HHiOHDipjxY5nUevTr7entedzP4o4zio1kyzWvnXHukT8/N7bieAcLj3+cms5L+28717vSPg8LN4jny18u/LX2R0/y8W2SHupl4MVc+XiO+o8XK1/R1rj9ZZYq+ckQlpboh0c2cQMs4hWZZxDTMs4gZZQIqoACoDEURXQrioICgAAAAkqMLQjUNcwrZjt0z8wmNw3xccvKTYNMbWGohhtGtNHF8XTDXryWiseXrafSI82L3rSNzLpiw2yW8tY2/K8dzXNmydVY6aR+Gk9/zn3euvnva247Pd4eLjx01b+b2s8fMckR3x/SW4zW9YZtxqT2s3V5hknwxz+ctxmtPo5zx6x3szr9rfxnpj0hfp27sz83Xt1dnD8NEOtaaePfJt11q6acJlnFV0ztnFV0kyzioztnEKztlEKi6EAAQCRWMiog6FcgFEAAAAUE0CTCrthao1EtdqjcS1zl6e1vynylnbfl32ZfaKz5WOTNWsbtatY9bTEQkzEd5WtJt0iNvL4rnMfhw165/uncVj5R5vFvyfSkbebj4U98k6eZfDky268kza0+vhHtEeTx/La87s8yL1xx5axqG7HwWvJ1rjc7ZnRTgvZ0jG5TmdOLg49HSKONszqpw2m4q5Tkba4V05zdlGNdJ5mcYxnzLFRNr0ibXQigKAAIKgJIqCt45KAIoAAAAChoCYDbGaixLXfDExqY3EpMbbi8x2cGflUT+G16+1b2iHC2GJ7S8mnLmO8RP3OS/JpmdzM2n1tMzLnPH67nq7xzdRqOjZTluvJqMWmZ5O/VvpwevJuKOU5m2vDNRVmcrbXA1pznI2VxqzNmcUVna9ImzQbJgNmg2aBNICqgAACKxUQUQbmnNURQAAAUBdAAIAAAaQTQqaNLs6UNppTZoF0AAAACAgoCAIooiCAgpIqA3K5qCiAAKIAKoAAIAAIAAqAAAgKCACgIACCoACSigIKgIKA3NOYgsCKAACiIKogoIAAAAAAIKgAAAAAqAAgoCAIqSCCoCCgNyuYoqIoAAAiiggAAAAAAKggKAAgEioAAACCgIAKgJIqIqAA3NOaoAigAAogAAABoABQQAAQUABAARVEAAVAAQEFAQVARFAblc10BoRQAUAQAAAAAAAAA0ACCgGgTQGgNCoBoAEFARFQ2AJoVBU0g//9k="
   },
   {
-    "id":"2",
-    "title": "Nova Série anunciada no Disney +",
-    "description": "bla blabla",
-    "photoCover":"https://disneyplusbrasil.com.br/wp-content/uploads/2021/07/Series-Marvel-Disney-Plus-1024x576.jpg"
+    "postId":"1",
+    "postTitle": "NOVO HOMEM DE FERRO EM 3D",
+    "postDescription": "marvel anuncia um novo filme do homem de ferro, confira",
+    "postCover":"https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7F51FA9F6CBD9F0C9B1394B1CC0A6A842D07091318674E234CD33CBF7C28CDC3/scale?width=1200&aspectRatio=1.78&format=jpeg",
+    
+  },
+  {
+    "postId":"2",
+    "postTitle": "Nova Série anunciada no Disney +",
+    "postDescription": "Je suis la descriptión del post 3",
+    "postCover":"https://disneyplusbrasil.com.br/wp-content/uploads/2021/07/Series-Marvel-Disney-Plus-1024x576.jpg"
+  },
+  {
+    "postId":"3",
+    "postTitle": "Spartan Post with some class",
+    "postDescription": "No description here",
+    "postCover":"https://disneyplusbrasil.com.br/wp-content/uploads/2021/07/Series-Marvel-Disney-Plus-1024x576.jpg"
   }
 ]

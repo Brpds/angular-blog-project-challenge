@@ -11,26 +11,26 @@ export class ContentComponent implements OnInit {
   photoCover:string = ""
   contentTitle:string = ""
   contentDescription:string = ""
-  private id:string | null = "0"
+  postId:string = ``
+  private id:string | null = ""
 
   constructor(
     private route:ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe( value =>
+    this.route.paramMap.subscribe(value =>
      this.id = value.get("id")
     )
-
-    this.setValuesToComponent(this.id)
+      this.setValuesToComponent(this.id)
   }
 
-  setValuesToComponent(id:string | null){
-    const result = dataFake.filter(article => article.id == id)[0]
-
-    this.contentTitle = result.title
-    this.contentDescription = result.description
-    this.photoCover = result.photoCover
-  }
+ setValuesToComponent(id:string | null){
+   const result = dataFake.filter(article => article.postId == id)[0]
+   this.contentTitle = result.postTitle
+   this.contentDescription = result.postDescription
+   this.photoCover = result.postCover
+   this.id = result.postId
+ }
 
 }

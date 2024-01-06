@@ -1,0 +1,23 @@
+<div class="alter__content">
+        <input type="text" [(ngModel)]="bigNewsCover" placeholder="Image Link">
+        <input type="text" placeholder="Title Here" [(ngModel)]="bigNewsTitle"><br>
+        <textarea
+         placeholder="Description Here" 
+         name=""
+         id="bigNewsDescription"
+         cols="60" 
+         rows="5"
+         [(ngModel)]="bigNewsDescription"
+         ></textarea>
+    <div class="preview-content">
+        <img src="{{bigNewsCover}}" alt="">
+        <h1>{{bigNewsTitle}}</h1>
+        <p>
+            {{bigNewsDescription}}
+        </p>
+    </div>
+
+    <div>
+        <button (click)="addData()">Add Data</button>
+    </div>
+</div>

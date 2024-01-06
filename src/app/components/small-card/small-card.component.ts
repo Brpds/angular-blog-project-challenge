@@ -1,24 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { dataFake, postData } from 'src/app/data/dataFake';
 
 @Component({
   selector: 'app-small-card',
-  templateUrl: './small-card.component.html',
+  templateUrl: `./small-card.component.html`,
   styleUrls: ['./small-card.component.css']
 })
+
 export class SmallCardComponent implements OnInit {
 
-  @Input()
-  photoCover:string = ""
+  postInfo:postData[] = [...dataFake].reverse()
 
-  @Input()
-  cardTitle:string = ""
 
-  @Input()
-  Id:string="0"
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(this.postInfo)
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { dataFake } from 'src/app/data/dataFake';
 
 @Component({
   selector: 'app-big-card',
@@ -7,18 +9,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BigCardComponent implements OnInit {
 
-  @Input()
-  photoCover:string =""
-  @Input()
-  cardTitle:string= ""
-  @Input()
-  cardDescription:string =""
-  @Input()
-  Id:string="0"
+  postIndex:number = dataFake.length - 1
 
-  constructor() { }
+  Id:string = `${dataFake[this.postIndex].postId}`
+  photoCover:string = `${dataFake[this.postIndex].postCover}`
+  cardTitle:string = `${dataFake[this.postIndex].postTitle}`
+  cardDescription:string = `${dataFake[this.postIndex].postDescription}`
+  private id:string | null = `${this.postIndex}`
+
+  constructor(
+    private route:ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    console.log(dataFake)
   }
-
 }
