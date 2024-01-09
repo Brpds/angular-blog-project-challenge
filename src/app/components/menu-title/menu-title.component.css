@@ -6,7 +6,7 @@
   margin-top: 15px;
   margin-bottom: 15px;
   font-size: 135px;
-  font-family: 'segoe UI';
+  font-family: 'Dalek';
   display: flex;
   justify-content: center;
 }
@@ -14,4 +14,13 @@
 .container__menu-title > hr{
   margin-top: 20px;
   margin-bottom: 5px;
+}
+
+@font-face {
+  font-family: Dalek;
+  src: url("../../../assets/fonts/DALEK.ttf");
+}
+
+.postTitle{
+  font-family: 'Dalek';
 }

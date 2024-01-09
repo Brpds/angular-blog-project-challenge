@@ -14,7 +14,6 @@ export class NewPostComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(dataFake)
   }
 
 }

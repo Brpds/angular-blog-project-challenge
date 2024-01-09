@@ -6,3 +6,15 @@
   justify-content: center;
 }
 
+.newPost{
+  border: 1px solid white;
+  height: 32px;
+  width: 100px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.newPost a:hover, .newPost:hover{
+  background: white;
+  color: #151e25;
+}

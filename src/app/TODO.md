@@ -1,2 +1,2 @@
 Add Styling
-Add Post Deletion
+Add post editing

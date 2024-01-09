@@ -1,4 +1,7 @@
 
+.container__menu-bar{
+  float: right;
+}
 
 .container__menu-bar > ul{
   display: flex;
@@ -10,3 +13,13 @@
   list-style: none;
 }
 
+img{
+  border-radius: 50%;
+  width: 24px;
+}
+
+.newPost a:hover{
+  border-radius: 8px;
+  background: white;
+  color: #151e25;
+}

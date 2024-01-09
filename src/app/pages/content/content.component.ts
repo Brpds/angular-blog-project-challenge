@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {dataFake} from '../../data/dataFake'
+import { dataFake } from '../../data/dataFake'
 
 @Component({
   selector: 'app-content',
@@ -8,6 +8,11 @@ import {dataFake} from '../../data/dataFake'
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+
+editPost(){
+  console.log('edit')
+}
+
   photoCover:string = ""
   contentTitle:string = ""
   contentDescription:string = ""
@@ -32,5 +37,13 @@ export class ContentComponent implements OnInit {
    this.photoCover = result.postCover
    this.id = result.postId
  }
+
+ removePost(title:string){
+  //const idNumber:number = parseInt(id)
+  const newPostList = dataFake.filter(post => post.postTitle !== title)
+  dataFake.length = 0
+  dataFake.push(...newPostList)
+  console.log(dataFake)
+}
 
 }

@@ -3,9 +3,24 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-  background-color: #111111;
+  background-color:#151e25;
   color:white;
-  font-family: 'Segoe UI';
+  font-family: 'Dalek';
+  /*font-family: 'Segoe UI';*/
+}
+
+@font-face {
+  font-family: Dalek;
+  src: url("./assets/fonts/DALEK.ttf");
+}
+
+
+h1, h2, h3, h4, h5, a{
+  font-family: 'Dalek';
+}
+
+p{
+  font-family: 'Dalek';
 }
 
 a{

@@ -8,6 +8,8 @@
   </div>
   <div class="content__description">
     <a [routerLink]="['']"> << VOLTAR </a>
+    <button (click)="removePost(contentTitle)">Delete</button>
+    <button (click)="editPost()">Edit</button>
     <p>
       {{ contentDescription }}
     </p>
