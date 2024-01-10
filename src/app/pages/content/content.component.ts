@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { dataFake } from '../../data/dataFake'
+import { dataFake, postData } from '../../data/dataFake'
+import { AlterFormComponent } from 'src/app/components/alter-form/alter-form.component';
 
 @Component({
   selector: 'app-content',
@@ -9,15 +10,13 @@ import { dataFake } from '../../data/dataFake'
 })
 export class ContentComponent implements OnInit {
 
-editPost(){
-  console.log('edit')
-}
-
   photoCover:string = ""
   contentTitle:string = ""
   contentDescription:string = ""
   postId:string = ``
   private id:string | null = ""
+
+  postEdit:boolean = false
 
   constructor(
     private route:ActivatedRoute
@@ -44,6 +43,19 @@ editPost(){
   dataFake.length = 0
   dataFake.push(...newPostList)
   console.log(dataFake)
+}
+
+editPost(){
+  switch(this.postEdit){
+    case false:
+      this.postEdit = true;
+      break;
+    case true:
+      this.postEdit = false;
+      break;
+    default: false;
+      break;
+  }
 }
 
 }

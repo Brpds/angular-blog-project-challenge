@@ -6,12 +6,23 @@
     <h1>{{ contentTitle }}</h1>
     <hr />
   </div>
-  <div class="content__description">
+  <div class="buttons">
     <a [routerLink]="['']"> << VOLTAR </a>
-    <button (click)="removePost(contentTitle)">Delete</button>
-    <button (click)="editPost()">Edit</button>
+    <button class="button-style" (click)="removePost(contentTitle)">Delete</button>
+    <button class="button-style" (click)="editPost()">Edit</button>
+  </div>
+  <div class="content__description">
     <p>
       {{ contentDescription }}
     </p>
   </div>
+
+  <div *ngIf="postEdit; else hidePostEdit">
+
+    <app-alter-form></app-alter-form>
+
+  </div>
+  <ng-template #hidePostEdit>
+    <p>click Edit Button to edit</p>
+  </ng-template>
 </div>

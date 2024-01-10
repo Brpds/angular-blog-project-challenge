@@ -1,7 +1,19 @@
 <div class="alter__content">
-        <input type="text" [(ngModel)]="bigNewsCover" placeholder="Image Link">
-        <input type="text" placeholder="Title Here" [(ngModel)]="bigNewsTitle"><br>
+    <div class="inputFields">
+        <input
+         class="input-field" 
+         type="text" 
+         [(ngModel)]="bigNewsCover" 
+         placeholder="Image Link">
+
+        <input
+         class="input-field" 
+         type="text" 
+         placeholder="Title Here" 
+         [(ngModel)]="bigNewsTitle">
+
         <textarea
+         class="input-field"
          placeholder="Description Here" 
          name=""
          id="bigNewsDescription"
@@ -9,6 +21,8 @@
          rows="5"
          [(ngModel)]="bigNewsDescription"
          ></textarea>
+    </div>
+
     <div class="preview-content">
         <img src="{{bigNewsCover}}" alt="">
         <h1>{{bigNewsTitle}}</h1>
@@ -17,7 +31,15 @@
         </p>
     </div>
 
-    <div>
-        <button (click)="addData()">Add Data</button>
+    <div class="buttons">
+        <div>
+            <button class="button-style" (click)="addData()">Add Data</button>
+        </div>
+
+        <button class="button-style"
+         (click)="saveChanges(bigNewsTitle)" 
+        >
+            Salvar e Voltar
+        </button>
     </div>
 </div>

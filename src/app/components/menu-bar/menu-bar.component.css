@@ -18,8 +18,12 @@ img{
   width: 24px;
 }
 
+.newPost a{
+  transition: background-color 0.3s ease
+}
+
 .newPost a:hover{
   border-radius: 8px;
-  background: white;
+  background-color: white;
   color: #151e25;
 }

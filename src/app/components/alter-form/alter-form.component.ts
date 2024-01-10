@@ -16,9 +16,19 @@ export class AlterFormComponent implements OnInit {
   @Input()
   bigNewsCover: string = '';
 
+
   newPost:postData[] = [
     {
       "postId": '',
+      "postCover": '',
+      "postTitle": '',
+      "postDescription": ''
+    }
+  ]
+
+  editedPost:postData[] = [
+    {
+      "postId": ``,
       "postCover": '',
       "postTitle": '',
       "postDescription": ''
@@ -40,5 +50,16 @@ export class AlterFormComponent implements OnInit {
     dataFake.push(newPost)
     console.log(dataFake)
   }
+
+  
+  saveChanges(title:string){
+      const editedPost = dataFake.find(post => post.postTitle === title)
+      if(editedPost){
+        console.log(editedPost)
+      }
+      else{
+        console.error(`Post with title: ${title} not found`)
+      }
+    }
 
 }
