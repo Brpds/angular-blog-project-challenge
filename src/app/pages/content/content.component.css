@@ -1,3 +1,7 @@
+.main__container{
+  
+}
+
 .container__content{
 
   width: 100%;
@@ -44,4 +48,36 @@
 
 .button-style:hover{
   background-color:#1c2935;
+}
+
+.postEdition{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputFields{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.input-field{
+  border-radius: 6px;
+  transition: background-color .3s ease;
+}
+
+.input-field:focus{
+  background-color: #1c2935;
+  border-color: #4a90e2;
+  outline: none;
 }

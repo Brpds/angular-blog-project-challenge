@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { dataFake, postData } from '../../data/dataFake'
-import { AlterFormComponent } from 'src/app/components/alter-form/alter-form.component';
 
 @Component({
   selector: 'app-content',
@@ -14,9 +13,10 @@ export class ContentComponent implements OnInit {
   contentTitle:string = ""
   contentDescription:string = ""
   postId:string = ``
-  private id:string | null = ""
+  id:string | null = ""
+  postIndex:number = 0
 
-  postEdit:boolean = false
+  postEdit:boolean = true
 
   constructor(
     private route:ActivatedRoute
@@ -35,10 +35,21 @@ export class ContentComponent implements OnInit {
    this.contentDescription = result.postDescription
    this.photoCover = result.postCover
    this.id = result.postId
+   console.log(result)
+ }
+
+ setValuesToEditing(id:string | null){
+  const editedPost = dataFake.filter(post => post.postId == id)[0]
+  const position = dataFake.indexOf(editedPost)
+  editedPost.postTitle = this.contentTitle
+  editedPost.postCover = this.photoCover
+  editedPost.postDescription = this.contentDescription
+  dataFake.splice(position, 1, editedPost)
+  console.log(dataFake[position])
+  console.log(editedPost.postCover)
  }
 
  removePost(title:string){
-  //const idNumber:number = parseInt(id)
   const newPostList = dataFake.filter(post => post.postTitle !== title)
   dataFake.length = 0
   dataFake.push(...newPostList)

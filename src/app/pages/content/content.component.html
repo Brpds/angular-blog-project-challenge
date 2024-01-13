@@ -1,28 +1,59 @@
-<div class="container__content">
-  <div class="content__cover">
-    <img src="{{ photoCover }}" alt="" srcset="">
-  </div>
-  <div class="content__title">
-    <h1>{{ contentTitle }}</h1>
-    <hr />
-  </div>
-  <div class="buttons">
-    <a [routerLink]="['']"> << VOLTAR </a>
-    <button class="button-style" (click)="removePost(contentTitle)">Delete</button>
-    <button class="button-style" (click)="editPost()">Edit</button>
-  </div>
-  <div class="content__description">
-    <p>
-      {{ contentDescription }}
-    </p>
-  </div>
+<div class="main__container">
+  <div *ngIf="postEdit; else hidePostEdit" class="container__content">
+    <div class="content__cover">
+      <img src="{{ photoCover }}" alt="" srcset="">
+    </div>
+    <div class="content__title">
+      <h1>{{ contentTitle }}</h1>
+      <hr />
+    </div>
 
-  <div *ngIf="postEdit; else hidePostEdit">
+    <div class="content__description">
+      <p>
+        {{ contentDescription }}
+      </p>
+    </div>
 
-    <app-alter-form></app-alter-form>
+    <div class="buttons">
+      <a [routerLink]="['']"> << VOLTAR </a>
+      <button class="button-style" (click)="removePost(contentTitle)">Delete</button>
+      <button class="button-style" (click)="editPost()">Edit</button>
+    </div>
 
   </div>
   <ng-template #hidePostEdit>
-    <p>click Edit Button to edit</p>
+    <div class="preview-content">
+      <img src="{{photoCover}}" alt="">
+      <h1>{{contentTitle}}</h1>
+      <p>
+          {{contentDescription}}
+      </p>
+  </div>
+    <div class="postEdition container__content">
+      <div class="inputFields">
+        <input
+         class="input-field" 
+         type="text" 
+         [(ngModel)]="photoCover"
+         >
+        <input
+         class="input-field" 
+         type="text" 
+         [(ngModel)]="contentTitle">
+         <textarea
+         class="input-field"
+         name=""
+         id="bigNewsDescription"
+         cols="60" 
+         rows="5"
+         [(ngModel)]="contentDescription"
+         ></textarea>
+      </div>
+
+      <div class="buttons">
+        <button class="button-style" (click)="editPost()">Cancel</button>
+        <button class="button-style" (click)="setValuesToEditing(id); editPost()">Save</button>
+      </div>
+    </div>
   </ng-template>
 </div>

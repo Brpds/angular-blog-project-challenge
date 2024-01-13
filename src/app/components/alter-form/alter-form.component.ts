@@ -26,15 +26,6 @@ export class AlterFormComponent implements OnInit {
     }
   ]
 
-  editedPost:postData[] = [
-    {
-      "postId": ``,
-      "postCover": '',
-      "postTitle": '',
-      "postDescription": ''
-    }
-  ]
-
   constructor() { }
 
   ngOnInit(): void {
@@ -42,24 +33,22 @@ export class AlterFormComponent implements OnInit {
 
   addData(){
     const newPost = {
-      "postId" : `${dataFake.length + 1}`,
+      "postId" : `${dataFake.length}`,
       "postTitle" : this.bigNewsTitle,
       "postCover" : this.bigNewsCover,
       "postDescription" : this.bigNewsDescription
     }
-    dataFake.push(newPost)
+    if(this.bigNewsCover == '' || this.bigNewsDescription == '' || this.bigNewsTitle == ''){
+      alert('All fields required')
+    }else{
+      dataFake.push(newPost)
+      alert('Post added sucessfully')
+      this.bigNewsCover = ''
+      this.bigNewsDescription = ''
+      this.bigNewsTitle = ''
+    }
     console.log(dataFake)
   }
 
-  
-  saveChanges(title:string){
-      const editedPost = dataFake.find(post => post.postTitle === title)
-      if(editedPost){
-        console.log(editedPost)
-      }
-      else{
-        console.error(`Post with title: ${title} not found`)
-      }
-    }
 
 }

@@ -30,5 +30,11 @@ export let dataFake:postData[] = [
     "postTitle": "A shield as an umbrella: how to make the most of your equipment!",
     "postDescription": `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas alias, quo deleniti non quibusdam soluta provident iste voluptates impedit nulla aliquam accusantium iure, corrupti aut vitae dignissimos saepe possimus libero!`,
     "postCover":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV2UcgIdywDmMwp8aKfzXgAASrB5JpXwb8lw&usqp=CAU"
+  },
+  {
+    "postId": '4',
+    "postTitle":"At last, some rest.",
+    "postDescription":"Rest? You fixed one function. Back to studying!!! :D",
+    "postCover":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY3gJF8pZhUn2fMet-zvWqcjfqzdq5f2Qj-w&usqp=CAU"
   }
 ]
